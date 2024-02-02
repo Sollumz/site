@@ -1,0 +1,25 @@
+{% from "fragments.njk" import svgIcon, wip %}
+{% extends 'default.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/release.css">
+<!-- Uncomment if we need syntax highlighting in release notes -->
+<!-- <link rel="stylesheet" href="/css/syntax-highlighting.css"> -->
+{% endblock %}
+
+
+{% block main %}
+{% if env.isProduction %}
+{{ wip() }}
+{% else %}
+<article class="release">
+    <h1>{{ title }}</h1>
+    <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+    <a href="{{ release.download_url }}">Download</a>
+    <div class="post-content">
+    {{ content | safe }}
+    </div>
+    <a href="{{ release.download_url }}">Download</a>
+</article>
+{% endif %}
+{% endblock %}

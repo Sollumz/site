@@ -1,0 +1,35 @@
+--
+title: Home
+---
+{% from "fragments.njk" import wip %}
+{% extends 'default.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="/css/home.css">
+{% endblock %}
+
+{% block main %}
+{% if env.isProduction %}
+    {{ wip() }}
+{% else %}
+<section id="about">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam doloremque eos exercitationem inventore, libero molestiae mollitia quae. Animi deleniti eveniet fuga non, odio optio, quam recusandae saepe similique, sunt vero?
+</section>
+<div id="content">
+    {% if collections.releases | length > 0 %}
+    <section id="releases">
+        <h1><a href="/releases">Releases</a></h1>
+
+        <div>
+        <ul>
+        {% for release_page in collections.releases | reverse %}
+          <li><a href="{{ release_page.url }}">{{ release_page.page.title }}</a></li>
+        {% endfor %}
+        </ul>
+        </div>
+    </section>
+    {% endif %}
+
+</div>
+{% endif %}
+{% endblock %}

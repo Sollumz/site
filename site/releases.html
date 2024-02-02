@@ -1,0 +1,18 @@
+---
+title: Blog
+---
+{% from "fragments.njk" import wip %}
+{% extends 'default.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="/css/release.css">
+{% endblock %}
+
+{% block main %}
+{% if env.isProduction %}
+{{ wip() }}
+{% else %}
+<h1>Releases</h1>
+
+{% endif %}
+{% endblock %}
