@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if title %}{{ title }} — {% endif %} Sollumz</title>
+    <title>{% if title %}{{ title }} — {% endif %}Sollumz</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/css/global.css">
     <script src="/js/theming.js"></script>
@@ -15,4 +15,20 @@
     {% block main %}{% endblock %}
 </main>
 </body>
+
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+<script>
+  kofiWidgetOverlay.draw("alexguirre", {
+    "type": "floating-chat",
+    "floating-chat.donateButton.text": "Donate",
+    "floating-chat.donateButton.background-color": "var(--theme-accent)",
+    "floating-chat.donateButton.text-color": "#eee",
+    "floating-chat.stylesheets": '["/css/global.css", "https://fonts.googleapis.com/css?family=Nunito:400,700,800&display=swap"]',
+  });
+  // apply theme to ko-fi iframe
+  themeRefresh();
+</script>
+
+
+
 </html>

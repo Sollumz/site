@@ -1,9 +1,19 @@
 {% from "fragments.njk" import svgIcon %}
 <nav>
     <a class="navbar-logo" href="/" title="Home">Sollumz</a>
-    <a class="header-push header-icon" href="https://github.com/Skylumz/Sollumz" title="GitHub">
+    <a class="header-push" href="/releases" title="Releases">Releases</a>
+    <a class="" href="https://sollumz.gitbook.io/sollumz-wiki/" title="Wiki">Wiki</a>
+
+    <a class="header-icon" href="https://discord.gg/bZuWBWaQBg" title="Discord">
+        <!-- TODO: discord icon -->
+        {{ svgIcon("link", clickable=true) }}
+    </a>
+
+    <a class="header-icon" href="https://github.com/Skylumz/Sollumz" title="GitHub">
         {{ svgIcon("github", clickable=true) }}
     </a>
+
+
     <button id="theme-switcher" class="header-icon" title="Toggle Theme">
         {{ svgIcon("theme-switcher", clickable=true) }}
     </button>

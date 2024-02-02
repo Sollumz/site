@@ -7,7 +7,7 @@
     font-size: 18px;
 
     /* light mode */
-    --theme-accent-rgb: 235, 156, 0;
+    --theme-accent-rgb: 244, 93, 34;
     --theme-accent: rgb(var(--theme-accent-rgb));
     --theme-background: #f6f8fa;
     --theme-background-alt: #eeeeee;
@@ -37,7 +37,7 @@
 
 .dark-mode {
     color-scheme: dark;
-    --theme-accent-rgb: 255, 176, 0;
+    --theme-accent-rgb: 244, 93, 34;
     --theme-background: #11161d;
     --theme-background-alt: #22272e;
     --theme-background-alt-focus: #35393e;
@@ -77,6 +77,11 @@ body {
     margin: auto;
     padding: 0;
     max-width: 1160px;
+}
+
+/* make ko-fi iframe background transparent */
+body:has(> .floatingchat-donate-button) {
+    background: none transparent;
 }
 
 .row {

@@ -1,0 +1,11 @@
+---
+title: Latest Release
+---
+{% extends 'default.html' %}
+
+{% set latestRelease = (collections.releases | reverse)[0] %}
+
+{% block head %}
+  <meta http-equiv="refresh" content="0;URL={{ latestRelease.url }}">
+  <link rel="canonical" href="{{ latestRelease.url }}">
+{% endblock %}

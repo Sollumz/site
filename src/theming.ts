@@ -17,7 +17,7 @@ function themeEarlyInit(): void {
     });
 
     window.addEventListener("DOMContentLoaded", () => {
-        const themeSwitcher = window.document   .getElementById(THEME_SWITCHER_ID);
+        const themeSwitcher = window.document.getElementById(THEME_SWITCHER_ID);
         themeSwitcher?.addEventListener("click", function() {
             themeToggle();
         });
@@ -36,15 +36,34 @@ function themeRefresh(): void {
 
     if (theme === "dark") {
         document.documentElement.classList.add("dark-mode");
+        const frames = window.frames;
+        for (let i = 0; i < frames.length; i++) {
+            try {
+                frames[i].document.documentElement.classList.add("dark-mode");
+            } catch {} // in case of a cross-origin iframe
+        }
     } else {
         document.documentElement.classList.remove("dark-mode");
+        const frames = window.frames;
+        for (let i = 0; i < frames.length; i++) {
+            try {
+                frames[i].document.documentElement.classList.remove("dark-mode");
+            } catch {} // in case of a cross-origin iframe
+        }
     }
 }
+window.themeRefresh = themeRefresh;
 
 /**
  * Toggles the theme and stores it in local storage.
  */
 function themeToggle(): void {
+    const frames = window.frames;
+    for (let i = 0; i < frames.length; i++) {
+        try {
+            frames[i].document.documentElement.classList.toggle("dark-mode");
+        } catch {} // in case of a cross-origin iframe
+    }
     const usingDarkTheme = document.documentElement.classList.toggle("dark-mode");
     localStorage.setItem("theme", usingDarkTheme ? "dark" : "light");
 }

@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: Release
 ---
 {% from "fragments.njk" import wip %}
 {% extends 'default.html' %}
@@ -13,6 +13,16 @@ title: Blog
 {{ wip() }}
 {% else %}
 <h1>Releases</h1>
+
+  {% if collections.releases | length > 0 %}
+  <section id="releases">
+    <ul>
+    {% for releasePage in collections.releases | reverse %}
+      <li><a href="{{ releasePage.url }}">{{ releasePage.page.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 
 {% endif %}
 {% endblock %}
