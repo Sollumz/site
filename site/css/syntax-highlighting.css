@@ -13,10 +13,10 @@
  */
 
 /* Set the main properties of the code, code blocks, and inline code */
-code[class*="language-"],
+code,
 pre[class*="language-"] {
     background: var(--theme-code-background);
-    color: var(--theme-code-base);
+    /* color: var(--theme-code-base); */
     font-family: var(--theme-code-font);
     /* The following properties are standard, please leave them as they are */
     font-size: 1em;
@@ -64,7 +64,7 @@ pre[class*="language-"] {
 }
 
 /* Properties specific to inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code {
     padding: 0.1em; /* this is the default */
     border-radius: 4px;
     white-space: normal; /* this is standard */

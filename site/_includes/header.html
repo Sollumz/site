@@ -1,20 +1,46 @@
 {% from "fragments.njk" import svgIcon %}
-<nav>
-    <a class="navbar-logo" href="/" title="Home">Sollumz</a>
-    <a class="header-push" href="/releases" title="Releases">Releases</a>
-    <a class="" href="https://sollumz.gitbook.io/sollumz-wiki/" title="Wiki">Wiki</a>
-
-    <a class="header-icon" href="https://discord.gg/bZuWBWaQBg" title="Discord">
-        <!-- TODO: discord icon -->
-        {{ svgIcon("link", clickable=true) }}
+<header>
+  <div class="header-container">
+    <a class="header-logo" href="/" title="Go to {{ env.siteShortUrl }}">
+      <span>Sollumz</span>
     </a>
 
-    <a class="header-icon" href="https://github.com/Skylumz/Sollumz" title="GitHub">
-        {{ svgIcon("github", clickable=true) }}
-    </a>
+    <div class="header-push"></div>
+
+    <!-- hamburger menu for mobile -->
+    <input class="header-hamb-cb" type="checkbox" id="header-hamb-cb"/>
+    <label class="header-hamb" for="header-hamb-cb">
+      <span class="header-hamb-line"></span>
+    </label>
+
+    <nav class="header-nav">
+      <ul class="header-nav-menu">
+        <li><a class="" href="/releases" title="Releases">Releases</a></li>
+        <li><a class="" href="{{ env.wikiUrl }}" title="Wiki">Wiki</a></li>
+
+        <li>
+          <a class="header-icon" href="{{ env.discordUrl }}" title="Discord">
+            <!-- TODO: discord icon -->
+            {{ svgIcon("link", clickable=true) }}
+            <span>Discord</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="header-icon" href="{{ env.githubUrl }}" title="GitHub">
+            {{ svgIcon("github", clickable=true) }}
+            <span>GitHub</span>
+          </a>
+        </li>
 
 
-    <button id="theme-switcher" class="header-icon" title="Toggle Theme">
-        {{ svgIcon("theme-switcher", clickable=true) }}
-    </button>
-</nav>
+        <li>
+          <button id="theme-switcher" class="header-icon" title="Toggle Theme">
+            {{ svgIcon("theme-switcher", clickable=true) }}
+            <span>Toggle Theme</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

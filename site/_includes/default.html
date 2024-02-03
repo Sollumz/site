@@ -16,6 +16,7 @@
 </main>
 </body>
 
+{% if env.enableKofiWidget %}
 <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
 <script>
   kofiWidgetOverlay.draw("alexguirre", {
@@ -28,6 +29,7 @@
   // apply theme to ko-fi iframe
   themeRefresh();
 </script>
+{% endif %}
 
 
 

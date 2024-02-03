@@ -33,12 +33,13 @@ module.exports = function(eleventyConfig) {
         return array.slice(0, n);
     });
 
-    eleventyConfig.addFilter("processChangelog", str => {
+    eleventyConfig.addFilter("processChangelog", function(str) {
+        const ghUrl = this.ctx.env.githubUrl;
         return str
           // link GitHub commits
-          .replace(/(([0-9a-f]{7})[0-9a-f]{0,33})\b/g, "[`$2`](https://github.com/Skylumz/Sollumz/commit/$1)")
+          .replace(/(([0-9a-f]{7})[0-9a-f]{33})\b/g, `[\`$2\`](${ghUrl}/commit/$1)`)
           // link GitHub issues
-          .replace(/#([0-9]+)\b/g, "[#$1](https://github.com/Skylumz/Sollumz/issues/$1)")
+          .replace(/#([0-9]+)\b/g, `[#$1](${ghUrl}/issues/$1)`)
           // link GitHub usernames (regex from https://stackoverflow.com/a/30281147)
           .replace(/\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))/gi, "[@$1](https://github.com/$1)");
     });

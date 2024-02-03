@@ -1,27 +1,14 @@
 @import url('./header.css');
 
 main {
-    margin-inline: auto;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-#content {
     display: flex;
-    gap: 4rem;
-    flex-flow: row nowrap;
-}
-
-@media (max-width: 960px) {
-    #content {
-        flex-flow: column nowrap;
-    }
-}
-
-#releases {
-    /* flex: 1 0 60%; */
+    flex-direction: column;
+    gap: 2rem;
+    margin-inline: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 h1 {
@@ -36,4 +23,11 @@ h1 > a {
 
 h1 > a:hover {
     text-decoration: underline;
+}
+
+#latest-release {
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }

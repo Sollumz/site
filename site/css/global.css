@@ -6,14 +6,19 @@
     font-family: var(--default-font-family);
     font-size: 18px;
 
+    --content-max-width: 1280px;
+
     /* light mode */
-    --theme-accent-rgb: 244, 93, 34;
+    --theme-accent-rgb: 232, 125, 13;
     --theme-accent: rgb(var(--theme-accent-rgb));
+    --theme-accent-secondary-rgb: 49, 110, 170;
+    --theme-accent-secondary: rgb(var(--theme-accent-secondary-rgb));
     --theme-background: #f6f8fa;
     --theme-background-alt: #eeeeee;
     --theme-background-alt-focus: #d8d8d8;
     --theme-background-highlight: #dddddd;
     --theme-text: #000000;
+    --theme-text-light: #eeeeee;
     --theme-text-subtle-rgb: 102, 102, 102;
     --theme-text-subtle: rgb(var(--theme-text-subtle-rgb));
 
@@ -37,12 +42,12 @@
 
 .dark-mode {
     color-scheme: dark;
-    --theme-accent-rgb: 244, 93, 34;
-    --theme-background: #11161d;
+    --theme-background: #14171c;
     --theme-background-alt: #22272e;
     --theme-background-alt-focus: #35393e;
     --theme-background-highlight: #33383f;
     --theme-text: #eeeeee;
+    --theme-text-light: #eeeeee;
     --theme-text-subtle-rgb: 205, 205, 205;
 
     --theme-diff-ins: #4b5a2a;
@@ -75,8 +80,6 @@ body {
     background: var(--theme-background);
     color: var(--theme-text);
     margin: auto;
-    padding: 0;
-    max-width: 1160px;
 }
 
 /* make ko-fi iframe background transparent */
@@ -84,10 +87,21 @@ body:has(> .floatingchat-donate-button) {
     background: none transparent;
 }
 
+main {
+    max-width: var(--content-max-width);
+}
+
 .row {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    column-gap: 1em;
+}
+
+.row-baseline {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
     column-gap: 1em;
 }
 
@@ -115,4 +129,26 @@ svg.icon[clickable]:hover {
     font-family: var(--default-monospace-font-family);
     font-size: 2rem;
     text-align: center;
+}
+
+.primary-button {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-inline: 2rem;
+  padding-block: 0.5rem;
+  color: var(--theme-text-light);
+  background: var(--theme-accent);
+  border-radius: 8px;
+}
+
+.secondary-button {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  color: var(--theme-text-light);
+  background: var(--theme-accent-secondary);
+  border-radius: 8px;
 }

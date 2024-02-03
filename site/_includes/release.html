@@ -13,13 +13,15 @@
 {{ wip() }}
 {% else %}
 <article class="release">
-    <h1>{{ title }}</h1>
-    <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
-    <a href="{{ release.download_url }}">Download</a>
-    <div class="post-content">
+    <div class="row-baseline">
+      <h1>Sollumz {{ title }}</h1>
+      <time class="" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+    </div>
+    <a class="primary-button" href="{{ release.downloadUrl }}">Download</a>
+    <div class="release-content">
     {{ content | safe }}
     </div>
-    <a href="{{ release.download_url }}">Download</a>
+    <a class="primary-button" href="{{ release.downloadUrl }}">Download</a>
 </article>
 {% endif %}
 {% endblock %}
