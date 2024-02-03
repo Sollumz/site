@@ -1,0 +1,15 @@
+footer {
+    background-color: var(--theme-background-alt);
+    flex: 0;
+    padding-block: 0.5rem;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--header-height);
+    margin: auto;
+    max-width: var(--content-max-width);
+}
+

@@ -1,0 +1,41 @@
+@import url('./header.css');
+
+main {
+    margin-inline: auto;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#releases-table {
+    margin-inline: auto;
+}
+
+.release-row {
+    background-color: var(--theme-background-alt);
+}
+
+.release-row:hover {
+    background-color: var(--theme-background-highlight);
+}
+
+.release-col {
+    padding: 0.5rem 2rem;
+}
+
+.release-row:first-child > .release-col-version,
+.release-row:first-child > .release-col-date {
+    font-weight: bold;
+}
+
+
+.release-col-date {
+    color: var(--theme-text-subtle);
+}
+
+.release-col-download {
+    display: flex;
+    justify-content: center;
+}
+

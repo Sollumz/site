@@ -1,6 +1,3 @@
---
-title: Home
----
 {% from "fragments.njk" import wip %}
 {% extends 'default.html' %}
 
@@ -21,6 +18,14 @@ title: Home
 <section id="latest-release">
   <a class="primary-button" href="{{ latestRelease.downloadUrl }}">Download Sollumz {{ latestRelease.version }}</a>
   <a class="secondary-button" href="{{ latestReleasePage.url }}">What's New</a>
+</section>
+
+<section>
+  <h2>Installation</h2>
+  <p>
+    The installation process is the same as any other Blender add-on.
+    Visit <a href="https://sollumz.gitbook.io/sollumz-wiki/getting-started/installation">our wiki</a> for detailed instructions.
+  </p>
 </section>
 
 

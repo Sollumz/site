@@ -5,6 +5,14 @@
 <link rel="stylesheet" href="/css/release.css">
 <!-- Uncomment if we need syntax highlighting in release notes -->
 <link rel="stylesheet" href="/css/syntax-highlighting.css">
+
+<meta property="og:site_name" content="Sollumz">
+<meta property="og:title" content="Sollumz {{ title }}" />
+<meta property="og:description" content="Released on {{ date | readableDate }}" />
+<meta property="og:image" itemprop="image" content="{{ env.siteUrl }}/img/logo.png">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ env.siteUrl }}{{ page.url }}" />
+
 {% endblock %}
 
 

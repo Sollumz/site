@@ -13,7 +13,7 @@ module.exports = async function() {
       version: r.name.replace(/^Sollumz /, ""),
       tag: r.tag_name,
       date: r.published_at,
-      changelog: r.body + "test code\n```csharp\npublic static class Program {}\n```\nSome inline code `public static class Program {}` inline code.",
+      changelog: r.body,
       downloadUrl: r.assets.find(a => a.name === "Sollumz.zip" || a.name === "Sollumz-legacy.zip")?.browser_download_url,
     }));
 };

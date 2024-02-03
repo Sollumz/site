@@ -15,29 +15,33 @@
 
     <nav class="header-nav">
       <ul class="header-nav-menu">
-        <li><a class="" href="/releases" title="Releases">Releases</a></li>
-        <li><a class="" href="{{ env.wikiUrl }}" title="Wiki">Wiki</a></li>
+        <li><a class="" href="/releases" title="Releases"><span>Releases</span></a></li>
+        <li>
+          <a class="" href="{{ env.wikiUrl }}" title="Wiki">
+            {{ svgIcon("gitbook") }}
+            <span>Wiki</span>
+          </a>
+        </li>
 
         <li>
-          <a class="header-icon" href="{{ env.discordUrl }}" title="Discord">
-            <!-- TODO: discord icon -->
-            {{ svgIcon("link", clickable=true) }}
-            <span>Discord</span>
+          <a class="header-icon" href="{{ env.discordUrl }}" title="Join our Discord">
+            {{ svgIcon("discord") }}
+            <span class="hide-on-desktop">Join our Discord</span>
           </a>
         </li>
 
         <li>
           <a class="header-icon" href="{{ env.githubUrl }}" title="GitHub">
-            {{ svgIcon("github", clickable=true) }}
-            <span>GitHub</span>
+            {{ svgIcon("github") }}
+            <span class="hide-on-desktop">GitHub</span>
           </a>
         </li>
 
 
         <li>
           <button id="theme-switcher" class="header-icon" title="Toggle Theme">
-            {{ svgIcon("theme-switcher", clickable=true) }}
-            <span>Toggle Theme</span>
+            {{ svgIcon("theme-switcher") }}
+            <span class="hide-on-desktop">Toggle Theme</span>
           </button>
         </li>
       </ul>

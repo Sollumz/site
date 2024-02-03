@@ -1,4 +1,5 @@
 @import url('./header.css');
+@import url('./footer.css');
 
 :root {
     --default-font-family: "Roboto", "Helvetica", sans-serif;
@@ -6,7 +7,7 @@
     font-family: var(--default-font-family);
     font-size: 18px;
 
-    --content-max-width: 1280px;
+    --content-max-width: 1168px;
 
     /* light mode */
     --theme-accent-rgb: 232, 125, 13;
@@ -80,6 +81,10 @@ body {
     background: var(--theme-background);
     color: var(--theme-text);
     margin: auto;
+    display:flex;
+    flex-direction:column;
+    /* height:100%; */
+    min-height: 100vh;
 }
 
 /* make ko-fi iframe background transparent */
@@ -89,6 +94,7 @@ body:has(> .floatingchat-donate-button) {
 
 main {
     max-width: var(--content-max-width);
+    flex: 1;
 }
 
 .row {

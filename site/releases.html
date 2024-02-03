@@ -1,11 +1,11 @@
 ---
-title: Release
+title: Releases
 ---
 {% from "fragments.njk" import wip %}
 {% extends 'default.html' %}
 
 {% block head %}
-    <link rel="stylesheet" href="/css/release.css">
+    <link rel="stylesheet" href="/css/releases.css">
 {% endblock %}
 
 {% block main %}
@@ -16,11 +16,32 @@ title: Release
 
   {% if collections.releases | length > 0 %}
   <section id="releases">
-    <ul>
+    <!-- <ul> -->
+    <!--   <li><a href="{{ releasePage.url }}">{{ releasePage.page.title }}</a></li> -->
+    <!-- </ul> -->
+    <table id="releases-table">
     {% for releasePage in collections.releases | reverse %}
-      <li><a href="{{ releasePage.url }}">{{ releasePage.page.title }}</a></li>
+      {% set release = releasePage.data.release %}
+      {% set releaseDate = releasePage.page.date %}
+      <tr class="release-row">
+        <td class="release-col release-col-version">
+          <a href="{{ releasePage.url }}">Sollumz {{ releasePage.page.title }}</a>
+        </td>
+        <td class="release-col release-col-date">
+          <time class="" datetime="{{ releaseDate | htmlDateString }}">{{ releaseDate | readableDate }}</time>
+        </td>
+        <td class="release-col release-col-download">
+          <a
+          {% if loop.index0 == 0 %}
+            class="primary-button"
+          {% else %}
+            class="secondary-button"
+          {% endif %}
+            href="{{ release.downloadUrl }}">Download</a>
+        </td>
+      </tr>
     {% endfor %}
-    </ul>
+    </table>
   </section>
   {% endif %}
 

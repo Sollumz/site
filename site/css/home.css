@@ -28,6 +28,8 @@ h1 > a:hover {
 #latest-release {
     margin-inline: auto;
     display: flex;
+    flex-flow: wrap;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
 }
