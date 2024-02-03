@@ -1,5 +1,7 @@
 # NOTICE
 
+1. Inter Font
+2. JetBrains Mono Font
 2. [Bootstrap Icons](#bootstrap-icons)
 3. [VSCode Icons](#vscode-codicons)
 4. [Font Awesome Icons](#font-awesome-icons)

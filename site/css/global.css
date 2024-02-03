@@ -2,7 +2,7 @@
 @import url('./footer.css');
 
 :root {
-    --default-font-family: "Roboto", "Helvetica", sans-serif;
+    --default-font-family: "InterVariable", sans-serif;
     --default-monospace-font-family: "JetBrains Mono Regular", "Roboto Mono", monospace;
     font-family: var(--default-font-family);
     font-size: 18px;
@@ -10,18 +10,28 @@
     --content-max-width: 1168px;
 
     /* light mode */
-    --theme-accent-rgb: 232, 125, 13;
-    --theme-accent: rgb(var(--theme-accent-rgb));
-    --theme-accent-secondary-rgb: 49, 110, 170;
-    --theme-accent-secondary: rgb(var(--theme-accent-secondary-rgb));
+    --theme-accent: #e87d0d;
+    --theme-accent-secondary: #316eaa;
+
+    /* https://accessiblepalette.com/?lightness=98.2,93.95,85.1,76.5,67.65,57.8,47.6,40.4,32.4,23.55&e87d0d=0,0&316eaa=0,0&14171c=0,0 */
+    --theme-accent-400: #EB8F2E;
+    --theme-accent-500: var(--theme-accent)/* #D3710C */;
+    --theme-accent-600: #AC5C0A;
+    --theme-accent-secondary-400: #84A9CC;
+    --theme-accent-secondary-500: var(--theme-accent-secondary)/* #608FBD */;
+    --theme-accent-secondary-600: #3A74AE;
+
+
     --theme-background: #f6f8fa;
     --theme-background-alt: #eeeeee;
     --theme-background-alt-focus: #d8d8d8;
     --theme-background-highlight: #dddddd;
     --theme-text: #000000;
     --theme-text-light: #eeeeee;
-    --theme-text-subtle-rgb: 102, 102, 102;
-    --theme-text-subtle: rgb(var(--theme-text-subtle-rgb));
+    --theme-text-subtle: #666666;
+
+    --theme-link: #0069c2;
+    --theme-link-visited: #551a8b;
 
     --theme-diff-ins: #bee194;
     --theme-diff-ins-line: #effad8;
@@ -49,7 +59,10 @@
     --theme-background-highlight: #33383f;
     --theme-text: #eeeeee;
     --theme-text-light: #eeeeee;
-    --theme-text-subtle-rgb: 205, 205, 205;
+    --theme-text-subtle-rgb: #cdcdcd;
+
+    --theme-link: #8cb4ff;
+    --theme-link-visited: #ffadff;
 
     --theme-diff-ins: #4b5a2a;
     --theme-diff-ins-line: #3d4232;
@@ -70,6 +83,14 @@
     outline: 2px var(--theme-accent) solid;
     outline-offset: 2px;
     border-radius: 4px;
+}
+
+@font-face {
+  font-family: InterVariable;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/InterVariable.woff2") format("woff2");
 }
 
 @font-face {
@@ -94,13 +115,25 @@ body:has(> .floatingchat-donate-button) {
 main {
     box-sizing: border-box;
     width: 100%;
-    max-width: var(--content-max-width);
+    max-width: calc(var(--content-max-width) + 2rem); /* + 2rem because of the padding-left/right */
     flex: 1;
     margin-inline: auto;
     margin-top: 1rem;
     margin-bottom: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+main a {
+    color: var(--theme-link);
+}
+
+main a:hover {
+    text-decoration: none;
+}
+
+main a:visited {
+    color: var(--theme-link-visited);
 }
 
 .row {
@@ -150,8 +183,16 @@ svg.icon[clickable]:hover {
   padding-inline: 2rem;
   padding-block: 0.5rem;
   color: var(--theme-text-light);
-  background: var(--theme-accent);
+  background: var(--theme-accent-500);
   border-radius: 8px;
+}
+
+.primary-button:hover {
+  background: var(--theme-accent-400);
+}
+
+.primary-button:visited {
+  color: var(--theme-text-light);
 }
 
 .secondary-button {
@@ -161,8 +202,16 @@ svg.icon[clickable]:hover {
   padding-inline: 1rem;
   padding-block: 0.5rem;
   color: var(--theme-text-light);
-  background: var(--theme-accent-secondary);
+  background: var(--theme-accent-secondary-500);
   border-radius: 8px;
+}
+
+.secondary-button:hover {
+  background: var(--theme-accent-secondary-400);
+}
+
+.secondary-button:visited {
+  color: var(--theme-text-light);
 }
 
 .breadcrumb {
@@ -176,8 +225,22 @@ svg.icon[clickable]:hover {
   padding: 0;
 }
 
+.breadcrumb li:not(:last-child) {
+  font-weight: 600;
+}
+
 .breadcrumb li:not(:last-child)::after {
   display: inline-block;
   margin: 0 .25rem;
   content: "/";
+}
+
+.breadcrumb li a,
+.breadcrumb li span {
+  color: var(--theme-text);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
 }
