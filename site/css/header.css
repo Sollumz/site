@@ -125,19 +125,21 @@ header {
 } /* Style span tag */
 
 .header-hamb-line::before,
-.header-hamb-line::after{
+.header-hamb-line::after {
     background: var(--theme-text);
     content: '';
     display: block;
     height: 100%;
     position: absolute;
-    transition: all .1s ease-out;
+    transition: transform .1s ease-out, top .1s ease-out;
     width: 100%;
 }
-.header-hamb-line::before{
+
+.header-hamb-line::before {
     top: 5px;
 }
-.header-hamb-line::after{
+
+.header-hamb-line::after {
     top: -5px;
 }
 

@@ -1,13 +1,5 @@
 @import url('./header.css');
 
-main {
-    margin-inline: auto;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
 #releases-table {
     margin-inline: auto;
 }

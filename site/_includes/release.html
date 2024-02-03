@@ -20,6 +20,13 @@
 {% if env.isProduction %}
 {{ wip() }}
 {% else %}
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ul>
+    <!-- <li><a href="/">Home</a></li> -->
+    <li><a href="/releases">Releases</a></li>
+    <li><span aria-current="page">{{ title }}</span></li>
+  </ul>
+</nav>
 <article class="release">
     <div class="row-baseline">
       <h1>Sollumz {{ title }}</h1>
