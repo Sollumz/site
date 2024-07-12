@@ -2,6 +2,7 @@
 
 #releases-table {
     margin-inline: auto;
+    /* display: flex; */
 }
 
 .release-row {

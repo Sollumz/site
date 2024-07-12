@@ -1,7 +1,6 @@
 ---
 title: Releases
 ---
-{% from "fragments.njk" import wip %}
 {% extends 'default.html' %}
 
 {% block head %}
@@ -9,9 +8,6 @@ title: Releases
 {% endblock %}
 
 {% block main %}
-{% if env.isProduction %}
-{{ wip() }}
-{% else %}
 <h1>Releases</h1>
 
   {% if collections.releases | length > 0 %}
@@ -45,5 +41,4 @@ title: Releases
   </section>
   {% endif %}
 
-{% endif %}
 {% endblock %}

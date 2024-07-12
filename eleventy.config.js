@@ -1,8 +1,6 @@
 const luxon = require('luxon');
 const htmlmin = require("html-minifier");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const fs = require("fs/promises");
-const path = require("path");
 
 module.exports = function(eleventyConfig) {
     const isProduction = process.env.ELEVENTY_MODE === 'PROD';

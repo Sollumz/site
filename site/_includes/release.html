@@ -1,9 +1,8 @@
-{% from "fragments.njk" import svgIcon, wip %}
+{% from "fragments.njk" import breadcrumb %}
 {% extends 'default.html' %}
 
 {% block head %}
 <link rel="stylesheet" href="/css/release.css">
-<!-- Uncomment if we need syntax highlighting in release notes -->
 <link rel="stylesheet" href="/css/syntax-highlighting.css">
 
 <meta property="og:site_name" content="Sollumz">
@@ -17,16 +16,7 @@
 
 
 {% block main %}
-{% if env.isProduction %}
-{{ wip() }}
-{% else %}
-<nav aria-label="Breadcrumb" class="breadcrumb">
-  <ul>
-    <!-- <li><a href="/">Home</a></li> -->
-    <li><a href="/releases">Releases</a></li>
-    <li><span aria-current="page">{{ title }}</span></li>
-  </ul>
-</nav>
+{{ breadcrumb([["/releases", "Releases"]], title) }}
 <article class="release">
     <div class="row-baseline">
       <h1>Sollumz {{ title }}</h1>
@@ -38,5 +28,4 @@
     </div>
     <a class="primary-button" href="{{ release.downloadUrl }}">Download</a>
 </article>
-{% endif %}
 {% endblock %}

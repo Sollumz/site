@@ -15,7 +15,16 @@
 
     <nav class="header-nav">
       <ul class="header-nav-menu">
-        <li><a class="" href="/releases" title="Releases"><span>Releases</span></a></li>
+        <li>
+          <a
+          {% if (r/^\/releases\//).test(page.url) %}
+            class="header-current"
+          {% endif %}
+            href="/releases" title="Releases">
+            <span>Releases</span>
+          </a>
+        </li>
+
         <li>
           <a class="" href="{{ env.wikiUrl }}" title="Wiki">
             {{ svgIcon("gitbook") }}

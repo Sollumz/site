@@ -8,7 +8,7 @@ module.exports = async function() {
   });
 
   return json
-    .filter(r => !r.tag_name.includes("maintenance-3.6"))
+    // .filter(r => !r.tag_name.includes("maintenance-3.6"))
     .map(r => ({
       version: r.name.replace(/^Sollumz /, ""),
       tag: r.tag_name,

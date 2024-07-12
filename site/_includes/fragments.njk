@@ -4,6 +4,14 @@
   </svg>
 {% endmacro %}
 
-{% macro wip() %}
-  <div class="wip-banner">🚧  WIP  🚧</div>
+# parents = [[url0, title0], ..., [urlN, titleN]]
+{% macro breadcrumb(parents, current_title) %}
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol>
+      {% for p in parents %}
+        <li><a href="{{ p[0] }}">{{ p[1] }}</a></li>
+      {% endfor %}
+      <li><span aria-current="page">{{ current_title }}</span></li>
+    </ol>
+  </nav>
 {% endmacro %}
